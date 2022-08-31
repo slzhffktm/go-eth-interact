@@ -21,15 +21,12 @@ To understand what’s going on under the hood, let’s navigate to the Explorer
 
 This is following the [Alchemy interacting with a Smart Contract tutorial](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract/interacting-with-a-smart-contract).
 
-We are now going to read and print to console, then update the message stored in our smart contract.
+We are now going to interact with the smart contract and print to console.
 
-- Go to `scripts/interact.js` and change the message at line 24 with the message you want to update to. 
+- Go to `scripts/interact.js` and change the message at line 23 with the message you want to receive. 
   ```
-    const tx = await helloWorldContract.update("<Put your new message here>");
+    const resp2 = await helloWorldContract.GreetOwner("Owner");
   ```
 - Run `npx hardhat run scripts/interact.js`
-
-While you are running that script, you may notice that the `Updating the message...` 
-step takes a while to load before the new message is set. That is due to the mining process!
 
 Congrats! You just interacted with the smart contract that you deployed! 🎉

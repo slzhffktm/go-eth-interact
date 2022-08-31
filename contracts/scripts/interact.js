@@ -17,12 +17,11 @@ const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
 const helloWorldContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer);
 
 async function main() {
-  const message = await helloWorldContract.message();
-  console.log("The old message is: " + message);
+  const resp = await helloWorldContract.Hello();
+  console.log("The respond from Hello() is: " + resp);
 
-  console.log("Updating the message...");
-  const tx = await helloWorldContract.update("This is new message");
-  await tx.wait();
+  const resp2 = await helloWorldContract.GreetOwner("Owner");
+  console.log("The respond from GreetOwner() is: " + resp2);
 }
 
 main();
