@@ -25,7 +25,7 @@ We are now going to interact with the smart contract and print to console.
 
 - Go to `scripts/interact.js` and change the message at line 23 with the message you want to receive. 
   ```
-    const resp2 = await helloWorldContract.GreetOwner("Owner");
+    const resp2 = await helloWorldContract.GreetOwner("<your name here>");
   ```
 - Run `npx hardhat run scripts/interact.js`
 
