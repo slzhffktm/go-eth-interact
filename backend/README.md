@@ -1,6 +1,6 @@
 # Running The Go Program to Interact with The Smart Contract
 
-This is following the [goethereumbook.org Smart Contract Write Section](https://goethereumbook.org/en/smart-contract-write/).
+This is following the [goethereumbook.org Smart Contract Write Section](https://goethereumbook.org/en/smart-contract-write/) and [Creating a simple Ethereum Smart Contract in Golang](https://towardsdev.com/creating-a-simple-ethereum-smart-contract-in-golang-138b9439f64e).
 
 ## Getting Started
 
