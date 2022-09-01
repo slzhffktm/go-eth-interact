@@ -16,4 +16,4 @@ How to communicate with Ethereum smart contract in Golang.
 
 - [Alchemy Hello World Smart Contract tutorial](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract)
 - [Creating a simple Ethereum Smart Contract in Golang](https://towardsdev.com/creating-a-simple-ethereum-smart-contract-in-golang-138b9439f64e)
-- [goethereumbook.org Smart Contract Write Section](https://goethereumbook.org/en/smart-contract-write/)
+- [goethereumbook.org Smart Contracts Section](https://goethereumbook.org/en/smart-contracts/)
