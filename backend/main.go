@@ -84,5 +84,4 @@ func main() {
 		log.Fatal(fmt.Errorf("GreetOwner error: %w", err))
 	}
 	fmt.Printf("The respond from GreetOwner() is: %s\n", resp2)
-
 }
