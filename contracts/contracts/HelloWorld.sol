@@ -8,18 +8,20 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 // Defines a contract named `HelloWorld`.
 // A contract is a collection of functions and data (its state). Once deployed, a contract resides at a specific address on the Ethereum blockchain. Learn more: https://solidity.readthedocs.io/en/v0.5.10/structure-of-a-contract.html
 contract HelloWorld is Ownable {
-    // Hello function available for everyone.
-    function Hello() public pure returns (string memory) {
+    string public ownerName;
+
+    // hello function available for everyone.
+    function hello() public pure returns (string memory) {
         return "Hello World";
     }
 
-    // GreetOwner function is only available for the owner.
-    function GreetOwner(string memory name)
-        public
-        view
-        onlyOwner
-        returns (string memory)
-    {
-        return string(abi.encodePacked("Hello ", name, "!"));
+    // greetOwner function is only available for the owner.
+    function greetOwner() public view onlyOwner returns (string memory) {
+        return string(abi.encodePacked("Hello ", ownerName, "!"));
+    }
+
+    // updateOwnerName function will require the owner to sign the transaction using the private key.
+    function updateOwnerName(string memory newName) public onlyOwner {
+        ownerName = newName;
     }
 }

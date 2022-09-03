@@ -17,11 +17,15 @@ const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
 const helloWorldContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer);
 
 async function main() {
-  const resp = await helloWorldContract.Hello();
-  console.log("The respond from Hello() is: " + resp);
+  const resp = await helloWorldContract.hello();
+  console.log("The respond from hello() is: " + resp);
 
-  const resp2 = await helloWorldContract.GreetOwner("Owner");
-  console.log("The respond from GreetOwner() is: " + resp2);
+  console.log("Updating owner name...");
+  const tx = await helloWorldContract.updateOwnerName("Owner");
+  await tx.wait(); // Wait for the transaction to complete.
+  
+  const resp2 = await helloWorldContract.greetOwner();
+  console.log("The respond from greetOwner() is: " + resp2);
 }
 
 main();

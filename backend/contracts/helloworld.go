@@ -30,7 +30,7 @@ var (
 
 // HelloworldMetaData contains all meta data concerning the Helloworld contract.
 var HelloworldMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"GreetOwner\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"Hello\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"greetOwner\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"hello\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ownerName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"newName\",\"type\":\"string\"}],\"name\":\"updateOwnerName\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // HelloworldABI is the input ABI used to generate the binding from.
@@ -179,12 +179,12 @@ func (_Helloworld *HelloworldTransactorRaw) Transact(opts *bind.TransactOpts, me
 	return _Helloworld.Contract.contract.Transact(opts, method, params...)
 }
 
-// GreetOwner is a free data retrieval call binding the contract method 0x8cd02529.
+// GreetOwner is a free data retrieval call binding the contract method 0x897640ec.
 //
-// Solidity: function GreetOwner(string name) view returns(string)
-func (_Helloworld *HelloworldCaller) GreetOwner(opts *bind.CallOpts, name string) (string, error) {
+// Solidity: function greetOwner() view returns(string)
+func (_Helloworld *HelloworldCaller) GreetOwner(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Helloworld.contract.Call(opts, &out, "GreetOwner", name)
+	err := _Helloworld.contract.Call(opts, &out, "greetOwner")
 
 	if err != nil {
 		return *new(string), err
@@ -196,26 +196,26 @@ func (_Helloworld *HelloworldCaller) GreetOwner(opts *bind.CallOpts, name string
 
 }
 
-// GreetOwner is a free data retrieval call binding the contract method 0x8cd02529.
+// GreetOwner is a free data retrieval call binding the contract method 0x897640ec.
 //
-// Solidity: function GreetOwner(string name) view returns(string)
-func (_Helloworld *HelloworldSession) GreetOwner(name string) (string, error) {
-	return _Helloworld.Contract.GreetOwner(&_Helloworld.CallOpts, name)
+// Solidity: function greetOwner() view returns(string)
+func (_Helloworld *HelloworldSession) GreetOwner() (string, error) {
+	return _Helloworld.Contract.GreetOwner(&_Helloworld.CallOpts)
 }
 
-// GreetOwner is a free data retrieval call binding the contract method 0x8cd02529.
+// GreetOwner is a free data retrieval call binding the contract method 0x897640ec.
 //
-// Solidity: function GreetOwner(string name) view returns(string)
-func (_Helloworld *HelloworldCallerSession) GreetOwner(name string) (string, error) {
-	return _Helloworld.Contract.GreetOwner(&_Helloworld.CallOpts, name)
+// Solidity: function greetOwner() view returns(string)
+func (_Helloworld *HelloworldCallerSession) GreetOwner() (string, error) {
+	return _Helloworld.Contract.GreetOwner(&_Helloworld.CallOpts)
 }
 
-// Hello is a free data retrieval call binding the contract method 0xbcdfe0d5.
+// Hello is a free data retrieval call binding the contract method 0x19ff1d21.
 //
-// Solidity: function Hello() pure returns(string)
+// Solidity: function hello() pure returns(string)
 func (_Helloworld *HelloworldCaller) Hello(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _Helloworld.contract.Call(opts, &out, "Hello")
+	err := _Helloworld.contract.Call(opts, &out, "hello")
 
 	if err != nil {
 		return *new(string), err
@@ -227,16 +227,16 @@ func (_Helloworld *HelloworldCaller) Hello(opts *bind.CallOpts) (string, error) 
 
 }
 
-// Hello is a free data retrieval call binding the contract method 0xbcdfe0d5.
+// Hello is a free data retrieval call binding the contract method 0x19ff1d21.
 //
-// Solidity: function Hello() pure returns(string)
+// Solidity: function hello() pure returns(string)
 func (_Helloworld *HelloworldSession) Hello() (string, error) {
 	return _Helloworld.Contract.Hello(&_Helloworld.CallOpts)
 }
 
-// Hello is a free data retrieval call binding the contract method 0xbcdfe0d5.
+// Hello is a free data retrieval call binding the contract method 0x19ff1d21.
 //
-// Solidity: function Hello() pure returns(string)
+// Solidity: function hello() pure returns(string)
 func (_Helloworld *HelloworldCallerSession) Hello() (string, error) {
 	return _Helloworld.Contract.Hello(&_Helloworld.CallOpts)
 }
@@ -270,6 +270,37 @@ func (_Helloworld *HelloworldSession) Owner() (common.Address, error) {
 // Solidity: function owner() view returns(address)
 func (_Helloworld *HelloworldCallerSession) Owner() (common.Address, error) {
 	return _Helloworld.Contract.Owner(&_Helloworld.CallOpts)
+}
+
+// OwnerName is a free data retrieval call binding the contract method 0x65ac2320.
+//
+// Solidity: function ownerName() view returns(string)
+func (_Helloworld *HelloworldCaller) OwnerName(opts *bind.CallOpts) (string, error) {
+	var out []interface{}
+	err := _Helloworld.contract.Call(opts, &out, "ownerName")
+
+	if err != nil {
+		return *new(string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(string)).(*string)
+
+	return out0, err
+
+}
+
+// OwnerName is a free data retrieval call binding the contract method 0x65ac2320.
+//
+// Solidity: function ownerName() view returns(string)
+func (_Helloworld *HelloworldSession) OwnerName() (string, error) {
+	return _Helloworld.Contract.OwnerName(&_Helloworld.CallOpts)
+}
+
+// OwnerName is a free data retrieval call binding the contract method 0x65ac2320.
+//
+// Solidity: function ownerName() view returns(string)
+func (_Helloworld *HelloworldCallerSession) OwnerName() (string, error) {
+	return _Helloworld.Contract.OwnerName(&_Helloworld.CallOpts)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
@@ -312,6 +343,27 @@ func (_Helloworld *HelloworldSession) TransferOwnership(newOwner common.Address)
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_Helloworld *HelloworldTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _Helloworld.Contract.TransferOwnership(&_Helloworld.TransactOpts, newOwner)
+}
+
+// UpdateOwnerName is a paid mutator transaction binding the contract method 0xbbc8dbf0.
+//
+// Solidity: function updateOwnerName(string newName) returns()
+func (_Helloworld *HelloworldTransactor) UpdateOwnerName(opts *bind.TransactOpts, newName string) (*types.Transaction, error) {
+	return _Helloworld.contract.Transact(opts, "updateOwnerName", newName)
+}
+
+// UpdateOwnerName is a paid mutator transaction binding the contract method 0xbbc8dbf0.
+//
+// Solidity: function updateOwnerName(string newName) returns()
+func (_Helloworld *HelloworldSession) UpdateOwnerName(newName string) (*types.Transaction, error) {
+	return _Helloworld.Contract.UpdateOwnerName(&_Helloworld.TransactOpts, newName)
+}
+
+// UpdateOwnerName is a paid mutator transaction binding the contract method 0xbbc8dbf0.
+//
+// Solidity: function updateOwnerName(string newName) returns()
+func (_Helloworld *HelloworldTransactorSession) UpdateOwnerName(newName string) (*types.Transaction, error) {
+	return _Helloworld.Contract.UpdateOwnerName(&_Helloworld.TransactOpts, newName)
 }
 
 // HelloworldOwnershipTransferredIterator is returned from FilterOwnershipTransferred and is used to iterate over the raw logs and unpacked data for OwnershipTransferred events raised by the Helloworld contract.

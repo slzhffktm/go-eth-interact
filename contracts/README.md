@@ -23,10 +23,10 @@ This is following the [Alchemy interacting with a Smart Contract tutorial](https
 
 We are now going to interact with the smart contract and print to console.
 
-- Go to `scripts/interact.js` and change the message at line 23 with the message you want to receive. 
+- Go to `scripts/interact.js` and set your name at line 24. 
   ```
-    const resp2 = await helloWorldContract.GreetOwner("<your name here>");
+    const tx = await helloWorldContract.updateOwnerName("<your name here>");
   ```
-- Run `npx hardhat run scripts/interact.js`
+- Run `npx hardhat run scripts/interact.js`, you should see the smart contract greeting you!
 
 Congrats! You just interacted with the smart contract that you deployed! 🎉
