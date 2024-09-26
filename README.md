@@ -7,11 +7,6 @@ How to communicate with Ethereum smart contract in Golang.
 1. Go to the `contracts/` directory and follow the README there
 2. Go to the `backend/` directory and follow the README there
 
-## Future Improvements
-
-- Deploying smart contract in Golang
-- Writing to smart contract in Golang
-
 ## Resources
 
 - [Alchemy Hello World Smart Contract tutorial](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract)
